@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b24">
+  <title>IsokoTrust — Agricultural Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="IsokoTrust home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>isoko<span>trust</span></strong><small>AGRICULTURAL INTELLIGENCE</small></span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-page="overview"><span class="nav-icon">◫</span><span>Overview</span></button>
+        <button class="nav-item" data-page="farmers"><span class="nav-icon">♙</span><span>Farmers & plots</span><span class="nav-count" id="farmerNavCount">0</span></button>
+        <button class="nav-item" data-page="intake"><span class="nav-icon">▤</span><span>Crop intake</span></button>
+        <button class="nav-item" data-page="verification"><span class="nav-icon">◎</span><span>SkyCheck</span><span class="nav-status"></span></button>
+        <button class="nav-item" data-page="passports"><span class="nav-icon">▧</span><span>Export passports</span></button>
+        <button class="nav-item" data-page="finance"><span class="nav-icon">↗</span><span>Warehouse finance</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="support-card">
+          <div class="support-icon">✳</div>
+          <strong>Built for the field.</strong>
+          <p>Designed to support cooperative teams, even with limited connectivity.</p>
+          <span class="offline-pill"><i></i> Offline-ready demo</span>
+        </div>
+        <button class="profile-button" id="profileButton">
+          <span class="avatar">AK</span>
+          <span class="profile-copy"><strong>AK Cooperative</strong><small>Workspace administrator</small></span>
+          <span class="profile-more">•••</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+          <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="breadcrumbCurrent">Overview</strong></div>
+        </div>
+        <div class="topbar-actions">
+          <div class="sync-indicator"><span class="sync-dot"></span><span>Local demo environment</span></div>
+          <button class="icon-button" id="helpButton" aria-label="Help">?</button>
+          <div class="top-avatar">AK</div>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="page active" id="page-overview">
+          <div class="page-heading heading-with-action">
+            <div>
+              <div class="eyebrow">MONDAY, 16 NOVEMBER 2026 <span class="eyebrow-line"></span> RWANDA</div>
+              <h1>Good afternoon, AK team <span class="wave">✳</span></h1>
+              <p class="page-subtitle">Here’s what’s happening across your agricultural supply chain.</p>
+            </div>
+            <button class="button button-primary" data-action="new-lot"><span>＋</span> Record crop lot</button>
+          </div>
+
+          <div class="hero-banner">
+            <div class="hero-content">
+              <div class="hero-kicker"><span class="hero-kicker-dot"></span> THE ISOKOTRUST NETWORK</div>
+              <h2>From verified harvests<br>to trusted capital.</h2>
+              <p>One connected view of crop origin, export readiness and warehouse-backed financing.</p>
+              <button class="hero-link" data-page-link="verification">Explore SkyCheck <span>↗</span></button>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="earth"><div class="earth-grid"></div><div class="earth-land"></div><div class="earth-pin">⌖</div></div>
+              <div class="orbit-label label-top"><span></span> ORIGIN VERIFIED</div>
+              <div class="orbit-label label-bottom"><span></span> RWANDA · 2026</div>
+              <div class="floating-card"><span class="floating-icon">↗</span><span><strong>Traceable by design</strong><small>Every lot. Every origin.</small></span></div>
+            </div>
+            <div class="hero-grain"></div>
+          </div>
+
+          <div class="section-heading">
+            <div><h3>Operational snapshot</h3><p>Live totals from your demonstration workspace</p></div>
+            <span class="updated-label"><span></span> Updated just now</span>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-top"><span class="stat-label">Registered farmers</span><span class="stat-icon green">♙</span></div>
+              <div class="stat-value" id="statFarmers">03</div>
+              <div class="stat-foot"><span class="trend-up">↑ Active</span><span>farmer profiles</span></div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span class="stat-label">Crop inventory</span><span class="stat-icon gold">▤</span></div>
+              <div class="stat-value"><span id="statInventory">2,450</span><small>kg</small></div>
+              <div class="stat-foot"><span class="trend-neutral">● Recorded</span><span>across all lots</span></div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span class="stat-label">Verified lots</span><span class="stat-icon blue">◎</span></div>
+              <div class="stat-value" id="statVerified">02<span class="stat-denom"> / <span id="statLots">03</span></span></div>
+              <div class="stat-foot"><span class="trend-up">↑ Traceability</span><span>demo verification</span></div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span class="stat-label">Indicative credit pool</span><span class="stat-icon purple">↗</span></div>
+              <div class="stat-value" id="statCredit">RWF 7.8M</div>
+              <div class="stat-foot"><span class="trend-neutral">● Illustrative</span><span>not a loan offer</span></div>
+            </article>
+          </div>
+
+          <div class="content-grid">
+            <section class="panel inventory-panel">
+              <div class="panel-heading"><div><h3>Recent crop lots</h3><p>Track the latest cooperative intake</p></div><button class="text-button" data-page-link="intake">View all lots <span>→</span></button></div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>LOT IDENTIFIER</th><th>PRODUCER</th><th>QUANTITY</th><th>STATUS</th></tr></thead>
+                  <tbody id="recentLotsBody"></tbody>
+                </table>
+              </div>
+            </section>
+            <section class="panel readiness-panel">
+              <div class="panel-heading"><div><h3>Export readiness</h3><p>Demonstration compliance overview</p></div><span class="mini-menu">•••</span></div>
+              <div class="readiness-score"><div class="score-ring"><div><strong id="readinessPercent">67</strong><small>%</small></div></div><div><strong>Traceability coverage</strong><p>Based on sample lots in this workspace.</p></div></div>
+              <div class="progress-list">
+                <div><span>Origin records</span><strong id="originProgressLabel">100%</strong><i><b id="originProgress" style="width:100%"></b></i></div>
+                <div><span>Moisture checks</span><strong id="moistureProgressLabel">67%</strong><i><b id="moistureProgress" style="width:67%"></b></i></div>
+                <div><span>SkyCheck demo status</span><strong id="skyProgressLabel">67%</strong><i><b id="skyProgress" style="width:67%"></b></i></div>
+              </div>
+              <div class="panel-note"><span>ⓘ</span> Illustrative metrics only. Not an official EUDR compliance assessment.</div>
+            </section>
+          </div>
+
+          <div class="bottom-grid">
+            <section class="panel activity-panel">
+              <div class="panel-heading"><div><h3>Recent activity</h3><p>What’s changed in your workspace</p></div><span class="activity-live"><i></i> LIVE DEMO</span></div>
+              <div class="activity-list" id="activityList"></div>
+            </section>
+            <section class="panel next-panel">
+              <div class="next-icon">✦</div><div><span class="eyebrow">YOUR NEXT STEP</span><h3>Keep your supply chain moving.</h3><p>Add a crop lot to see how intake, origin checks and financing connect.</p><button class="button button-dark" data-action="new-lot">Add a crop lot <span>→</span></button></div>
+            </section>
+          </div>
+          <div class="prototype-disclaimer">ISOKOTRUST PROTOTYPE · Sample data and simulated verification · Not connected to government, satellite, banking or insurance systems.</div>
+        </section>
+
+        <section class="page" id="page-farmers">
+          <div class="page-heading heading-with-action"><div><div class="eyebrow">SUPPLY CHAIN / PRODUCERS</div><h1>Farmers & plots</h1><p class="page-subtitle">Manage producer identities and the origin of their agricultural plots.</p></div><button class="button button-primary" data-action="new-farmer">＋ Register farmer</button></div>
+          <div class="stats-grid compact-stats">
+            <article class="stat-card"><div class="stat-label">Registered producers</div><div class="stat-value" id="farmersTotal">03</div><div class="stat-foot">In this demo workspace</div></article>
+            <article class="stat-card"><div class="stat-label">Mapped farm plots</div><div class="stat-value" id="plotsTotal">03</div><div class="stat-foot">Sample coordinates recorded</div></article>
+            <article class="stat-card"><div class="stat-label">Cooperative</div><div class="stat-value stat-text">AK Coffee</div><div class="stat-foot">Nyabihu District, Rwanda</div></article>
+          </div>
+          <section class="panel">
+            <div class="panel-heading"><div><h3>Producer directory</h3><p>Sample producer records for demonstration</p></div><div class="search-box"><span>⌕</span><input id="farmerSearch" placeholder="Search farmers..." aria-label="Search farmers"></div></div>
+            <div class="table-wrap"><table><thead><tr><th>FARMER</th><th>FARMER ID</th><th>LOCATION</th><th>GPS PLOT</th><th>REGISTERED LOTS</th><th>STATUS</th></tr></thead><tbody id="farmersBody"></tbody></table></div>
+          </section>
+        </section>
+
+        <section class="page" id="page-intake">
+          <div class="page-heading heading-with-action"><div><div class="eyebrow">SUPPLY CHAIN / INVENTORY</div><h1>Crop intake</h1><p class="page-subtitle">Record dried crop lots and connect inventory to its producer and origin.</p></div><button class="button button-primary" data-action="new-lot">＋ Record crop lot</button></div>
+          <div class="info-strip"><span class="info-strip-icon">⌁</span><div><strong>Offline-first workflow concept</strong><p>This demonstration stores records in this browser. A production offline-sync service is not connected.</p></div></div>
+          <section class="panel">
+            <div class="panel-heading"><div><h3>Cooperative inventory</h3><p>All recorded crop lots</p></div><div class="search-box"><span>⌕</span><input id="lotSearch" placeholder="Search lot or farmer..." aria-label="Search crop lots"></div></div>
+            <div class="table-wrap"><table><thead><tr><th>LOT IDENTIFIER</th><th>PRODUCER</th><th>CROP</th><th>WEIGHT</th><th>MOISTURE</th><th>ORIGIN CHECK</th><th>STATUS</th></tr></thead><tbody id="lotsBody"></tbody></table></div>
+          </section>
+        </section>
+
+        <section class="page" id="page-verification">
+          <div class="page-heading"><div><div class="eyebrow">GEOINTELLIGENCE / ORIGIN SCREENING</div><h1>SkyCheck <span class="beta-tag">DEMO</span></h1><p class="page-subtitle">A concept for plot-level origin screening using geospatial evidence.</p></div></div>
+          <div class="verification-layout">
+            <section class="panel map-panel">
+              <div class="map-toolbar"><div><span class="map-live-dot"></span><strong>Plot intelligence view</strong><small>NYABIHU · RWANDA</small></div><span class="map-tag">SAMPLE MAP</span></div>
+              <div class="map-visual">
+                <div class="map-grid"></div><div class="map-contour contour-a"></div><div class="map-contour contour-b"></div><div class="map-contour contour-c"></div>
+                <div class="map-river"></div><div class="map-plot plot-one"><span>F-001</span></div><div class="map-plot plot-two"><span>F-002</span></div><div class="map-plot plot-three"><span>F-003</span></div>
+                <div class="map-compass">N<br>↑</div><div class="map-scale">0 ━━━━━ 500 m</div>
+                <div class="map-legend"><span><i class="legend-green"></i> Sample farm plots</span><span><i class="legend-gold"></i> Sample boundary</span></div>
+                <div class="map-center-label">NYABIHU<br><small>WESTERN PROVINCE</small></div>
+              </div>
+              <div class="map-footer"><span>⌖ Coordinates shown are illustrative sample data</span><span>Map is a visual mockup</span></div>
+            </section>
+            <section class="panel verification-panel">
+              <div class="panel-heading"><div><h3>Run an origin screening</h3><p>Select a lot to simulate the workflow.</p></div></div>
+              <form id="verificationForm" class="form-stack">
+                <label>Crop lot<select id="verificationLot" required></select></label>
+                <div class="screening-explainer"><span>◎</span><p><strong>What this demonstration does</strong><br>Displays a sample screening result. It does not query Sentinel imagery or establish actual deforestation status.</p></div>
+                <button class="button button-primary button-full" type="submit">Run demo SkyCheck <span>→</span></button>
+              </form>
+              <div id="verificationResult" class="verification-result empty-result"><div class="empty-orbit">◎</div><strong>Awaiting screening</strong><p>Select a crop lot to view its demonstration result.</p></div>
+            </section>
+          </div>
+          <div class="prototype-disclaimer">A production implementation requires validated geospatial boundaries, authoritative forest-cover datasets, a documented methodology and expert review. Optical and radar imagery have different capabilities; no automated result should be presented as a legal determination without validation.</div>
+        </section>
+
+        <section class="page" id="page-passports">
+          <div class="page-heading heading-with-action"><div><div class="eyebrow">EXPORT OPERATIONS / DOCUMENTATION</div><h1>Export passports</h1><p class="page-subtitle">Create a shareable demonstration record for a traceable crop lot.</p></div></div>
+          <div class="info-strip"><span class="info-strip-icon">▧</span><div><strong>Digital passport concept</strong><p>These are prototype records, not official EU due diligence statements or TRACES submissions.</p></div></div>
+          <section class="passport-grid" id="passportGrid"></section>
+        </section>
+
+        <section class="page" id="page-finance">
+          <div class="page-heading"><div><div class="eyebrow">CAPITAL ACCESS / WAREHOUSE RECEIPTS</div><h1>Warehouse finance</h1><p class="page-subtitle">Estimate a potential working-capital limit against recorded crop inventory.</p></div></div>
+          <div class="finance-intro">
+            <div><span class="eyebrow">ILLUSTRATIVE FINANCING MODEL</span><h2>Turn stored harvest into a clearer credit conversation.</h2><p>Estimate a proposed advance against eligible inventory. This is not a bank decision, loan approval or insurance quotation.</p></div>
+            <div class="finance-symbol">↗</div>
+          </div>
+          <div class="finance-layout">
+            <section class="panel calculator-panel">
+              <div class="panel-heading"><div><h3>Credit eligibility calculator</h3><p>Adjust the sample inventory assumptions</p></div></div>
+              <form id="financeForm" class="form-stack">
+                <label>Crop lot<select id="financeLot"></select></label>
+                <div class="form-two"><label>Estimated value per kg (RWF)<input id="pricePerKg" type="number" min="1" value="4200" required></label><label>Advance rate (%)<input id="advanceRate" type="number" min="1" max="80" value="65" required></label></div>
+                <label>Illustrative insurance rate (%)<input id="insuranceRate" type="number" min="0" max="10" step="0.1" value="0.8"></label>
+                <button class="button button-primary button-full" type="submit">Calculate indicative limit <span>→</span></button>
+              </form>
+            </section>
+            <section class="panel finance-result">
+              <span class="eyebrow">INDICATIVE CREDIT SUMMARY</span>
+              <div class="result-label">Estimated inventory value</div><div class="result-number" id="inventoryValue">RWF 10,290,000</div>
+              <div class="result-divider"></div>
+              <div class="result-label">Proposed advance (65%)</div><div class="result-number result-highlight" id="advanceValue">RWF 6,688,500</div>
+              <div class="result-line"><span>Illustrative insurance cost</span><strong id="insuranceValue">RWF 82,320</strong></div>
+              <div class="result-line"><span>Remaining inventory value</span><strong id="remainingValue">RWF 3,601,500</strong></div>
+              <div class="result-footnote">Illustrative calculation only. Actual lending requires independent valuation, eligibility checks, risk assessment, insurance underwriting and lender approval.</div>
+              <button class="button button-dark button-full" id="creditDossierButton">Generate sample credit dossier <span>→</span></button>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header"><div><span class="eyebrow">ISOKOTRUST WORKSPACE</span><h2 id="modalTitle">New record</h2></div><button class="modal-close" id="modalClose" aria-label="Close">×</button></div>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
